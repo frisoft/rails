@@ -1,3 +1,14 @@
+
+*   Make `ActiveRecord::ConnectionPool` Fiber-safe
+
+    When `ActiveSupport::IsolatedExecutionState.isolation_level` is set to `:fiber`,
+    the connection pool now supports multiple Fibers from the same Thread checking
+    out connections from the pool.
+
+    *Alex Matchneer*
+
+*   Add `update_attribute!` to `ActiveRecord::Persistence`
+
 ## Rails 7.0.4.2 (January 24, 2023) ##
 
 *   No changes.
