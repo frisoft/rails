@@ -1,3 +1,13 @@
+*   Make `ActiveRecord::ConnectionPool` Fiber-safe
+
+    When `ActiveSupport::IsolatedExecutionState.isolation_level` is set to `:fiber`,
+    the connection pool now supports multiple Fibers from the same Thread checking
+    out connections from the pool.
+
+    *Alex Matchneer*
+
+*   Add `update_attribute!` to `ActiveRecord::Persistence`
+
 *   Fix support for Active Record instances being uses in queries.
 
     As of `7.0.5`, query arguments were deep duped to avoid mutations impacting
